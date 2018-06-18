@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="./script/angular.js"></script>
+    <script type="text/javascript" src="./script/age.js"></script>
+    <script type="text/javascript" src="./script/NameManipulation.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp">
+
+        <div ng-controller="myController">
+            <input type="text" ng-model="Namer" placeholder="Name" />
+            <input type="date" ng-model="Dater" />
+            <input type="submit" ng-click="ShowInfo()" />
+            <br/> {{NamerMod}}
+            <br/> {{Info}}
+            <br/> {{age}}
+        </div>
+        <div ng-controller="newController">
+            <input type="text" ng-model="Namer" placeholder="Name" ng-keyup="ShowNewName()" />
+            <br/>{{NewName}}
+        </div>
+    </div>
+
+</body>
+
+</html>

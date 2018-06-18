@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		{{fname}}
+		<input type="text" name="fname" ng-model="fname">
+		<!-- <p qshore></p> -->
+		<about-us msg="hello" fname="{{fname}}"></aboutus>
+		<!-- **<div class="qshore"></div>
+		 -->
+		 <!-- directiv qshore -->
+	</div>
+<!-- Template for directive 'qshore' must have exactly one root element.  -->
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myController', function($scope){
+			$scope.fname = 'qshore';
+		});
+		app.directive('aboutUs', function(){
+			return {
+				templateUrl: './temp.html',
+				restrict: 'MCEA',
+				replace:true,
+				scope: {msg:'@', fname:'@'}
+			}
+		})
+	</script>
+</body>
+</html>

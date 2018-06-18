@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		c = 0;
+		var callMe = function () {
+			console.log('event :: ' + c);
+			c++;
+		}
+	</script>
+	<style type="text/css">
+		p{
+			background-color: tomato;
+		}
+	</style>
+</head>
+<body>
+
+<p onclick="callMe()">this is click</p>
+<p onmouseover="callMe()">this is onmouseover</p>
+<p ondblclick ="callMe()">this is obdblclick</p>
+<p onmouseout="callMe()">this is onmouseout</p>
+<p onmouseenter="callMe()">this is onmouseenter</p>
+<p onmouseleave="callMe()">this is onmouseleave</p>
+<p onmousemove="callMe()">this is mousemove</p>
+
+<pre>
+	<input type="text" onclick="callMe()" placeholder="click">
+
+	<input type="text" onchange="callMe()" placeholder="change">
+
+	<input type="text" onfocus="callMe()" placeholder="focus">
+
+	<input type="text" onblur="callMe()" placeholder="blur">
+
+	<input type="text" onkeypress="callMe()" placeholder="press">
+	</pre>
+</body>
+</html>

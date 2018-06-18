@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <script>
+
+        checkIsPrime();
+        function checkIsPrime() {
+            var isprime = true;
+            InputNumber = prompt('Enter a number that is not equal to 1');
+            if (isNaN(InputNumber) || InputNumber == 1) {
+
+                checkIsPrime();
+
+            }
+            for (var i = 2; i < 20; i++) {
+                if (InputNumber % i == 0 && InputNumber != i) {
+                    document.write('the number ' + InputNumber + ' is not a prime number as it is divisible by ' + i + '<br/>');
+                    isprime = false;
+                    break;
+
+                }
+                else { isprime = true; }
+
+            }
+            if (isprime == true) {
+                document.write(InputNumber + ' is  a prime number');
+            }
+
+        }
+
+        function ShowPrimeNumbers() {
+            //alert(InputNumber);
+
+            var isprime = true;
+            for (j = 1; j <= InputNumber; j++) {
+                for (var i = 2; i < 20; i++) {
+                    if (j % i == 0 && j != i) {
+                        //document.write('the number '+InputNumber+' is not a prime number as it is divisible by ' +i+'<br/>');
+                        isprime = false;
+                        break;
+
+                    }
+                    else { isprime = true; }
+
+                }
+                if (isprime == true) {
+                    document.write(j + ' is  a prime number <br/>');
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <br/> Do you want to know all the prime numbers below the given input:
+    <input type="submit" value="Yes" onclick="ShowPrimeNumbers();" />
+</body>
+
+</html>

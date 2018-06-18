@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		<about-us msg="hello"  fname="{{fname}}"></aboutus>
+		<p>asdfasdf</p>
+		<about-us   lag="hello"  fname="{{fname}}"></aboutus>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myController', function($scope){
+			$scope.fname = 'qshore';
+			$scope.lname = 'qshore';
+			$scope.gname = 'qshore';
+		});
+		app.directive('aboutUs', function(){
+			return {
+				link : function(scope, ele, attr){
+					console.log(scope);
+					console.log(attr);
+					ele.append('<h1>heii .. ' + scope.fname + '::'+attr.msg + '</h1>');
+					for(i=0;i<10;i++){
+						ele.append('<h1>' + i + '</h1>');
+					}
+					ele.append('<p>bello</p>');
+				} 
+			}
+		});
+	</script>
+</body>
+</html>

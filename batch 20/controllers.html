@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="myController">
+			<pre>
+			{{a}}
+			{{b}}
+			</pre>
+		</div>
+		<div ng-controller="myController2">
+			<pre>
+			{{a}}
+			{{b}}
+			</pre>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('myController', function($scope){
+			$scope.a = 45;
+			$scope.b = 56;
+		});
+		app.controller('myController2', function($scope){
+			$scope.a = 4;
+			$scope.b = 5;
+		});
+	</script>
+</body>
+</html>

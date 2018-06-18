@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#errors{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="d1">
+		<p class="qshore" id="p1"> this is para 1</p>
+		<p class="qshore"> this is para 21 </p>
+		<p class="qshore"> this is para 22 </p>
+		<p id="p11"> this is para  3</p>
+
+		<div id="errors">
+		</div>
+		<input type="text" name="fname" id="fname" onblur ="callMe();">
+	</div>
+
+	<script>
+		console.log(document);
+		var p = document.getElementsByTagName('p');
+		console.log(p[2]);
+		var c = document.getElementsByClassName('qshore');
+		console.log(c);
+		console.log(c[1]);
+
+		var id = document.getElementById('p1');
+		console.log(id);
+
+		var q = document.querySelector('div.d1 p.qshore#p1');
+		console.log(q);
+		console.log(q.innerHTML);
+		q.innerHTML = ' Hello ' + q.innerHTML ;  //modifiying
+		q.innerHTML = '';  //removeing
+		q.innerHTML = '<span> this is span </span>';  //removeing
+
+
+		console.log(q.className);
+		q.className += ' Bello';
+		q.className = '';
+		q.title = 'this is popover';
+
+		q.id = 'qhosers';
+
+		q.style.color = 'red';
+		q.style.backgroundColor = 'yellow';
+		document.getElementById('p11').addEventListener('click', function(){
+			alert('asdf');
+		});
+		function callMe(){
+			var value = document.getElementById('fname').value;
+			console.log(value);
+			document.getElementById('errors').innerHTML = ''; 
+
+			if(value == ''){
+			document.getElementById('errors').innerHTML = '<p> this field is mandatory </p>'; 
+				
+			} else if (value.length < 5){
+			document.getElementById('errors').innerHTML = '<p> min 5 characters </p>'; 
+
+			}
+		}
+
+	</script>
+</body>
+</html>

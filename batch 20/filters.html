@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filters-</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="myController">
+		<pre>
+			{{fname}}
+			{{fname | lowercase}}
+			**{{fname | number}}
+			
+			{{age}}
+			{{age | number}}
+			{{age | currency}}
+			{{age | currency:'INR '}}
+			{{age | currency:'Rs. '}}
+			{{age | currency:'&#8377;'}}
+
+			{{today}}
+			{{today | date}}
+			{{today | date:'dd-MM-yy'}}
+
+			{{15 | hexa}}
+			{{20|params:2:3:5}}
+		</pre>
+<input type="text" name="search" ng-model="search">
+		<table border="1">
+			<!-- <tr ng-repeat="x in fruits | filter :'ap'"> -->
+			<tr ng-repeat="x in fruits | filter :search">
+				<td> {{x}} </td>
+			</tr>
+		</table>
+		<select ng-model="order">
+			<option>select</option>
+			<option>name</option>
+			<option>country</option>
+		</select>
+		<table border="1">
+			<tr>
+				<th>Name </th>
+				<th>Country </th>
+			</tr>
+			<!-- <tr ng-repeat="(k,x) in users | orderBy:'country'"> -->
+			<tr ng-repeat="(k,x) in users | orderBy:order">
+				<td> {{x.name}} </td>
+				<td> {{x.country}} </td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('myController', function($scope){
+			$scope.fname = 'qsHoRe';
+			$scope.age = 35;
+			$scope.today = new Date();
+
+			$scope.fruits = ['kiwi', 'orange', 'magno', 'apple', 'pineapple', 'custard apple', 'berry', 'banana',  'grapes', 'litchi', 'guava'];
+
+
+			$scope.users = [
+				{name:'mahesh', country:'india'},
+				{name:'ramesh', country:'pakistan'},
+				{name:'ganesh', country:'australia'},
+				{name:'suresh', country:'canada'},
+				{name:'lokesh', country:'poland'},
+				{name:'bharti', country:'scotland'},
+				{name:'harish', country:'kryzkistan'},
+				{name:'sai', country:'uzbekistan'},
+				{name:'ravi', country:'afghanistan'},
+			]
+		});
+
+		app.filter('hexa', function(){
+			return function(inp){
+					return inp.toString(16);
+			}
+		});
+		app.filter('params', function(){
+			return function(x, p1, p2, p3){
+					return x * (p1 + p2 + p3);
+			}
+		})
+	</script>
+</body>
+</html>

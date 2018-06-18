@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		<pre>
+		**{{a}}
+		++{{b}}
+		{{age}}
+		{{fname}}
+		**{{gender}}
+		**{{interst}}
+		{{fruits}}
+		{{user}}
+		**	{{undf}}
+		</pre>
+
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+
+		app.controller('myController', function($scope){
+			// busineess logic
+			var b = 4;
+			var a = 3;
+
+			$scope.a = 45;
+			$scope.b = 56;
+			$scope.age = 56;
+			$scope.fname = 'qshore';
+			$scope.gender = true;
+			$scope.interst = null;
+			$scope.fruits = ['kiwi', 'melon', 'berry'];
+			$scope.user = {name: 'angular', exp:'5yrs'};
+			$scope.undf;
+
+		})
+		
+	</script>
+</body>
+</html>

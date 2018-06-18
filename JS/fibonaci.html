@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script>
+        var inputnumber = prompt('Enter the number');
+
+        var counter;
+        var perCounter = 0;
+        var previousNumber = 1;
+        
+        for (i = 0; i <= inputnumber; i++) {
+            if (i == 0)
+                document.write(previousNumber + ' ');
+            else {
+                counter = perCounter + previousNumber;
+                perCounter = previousNumber;
+                previousNumber = counter;
+                document.write(counter + ' ');
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

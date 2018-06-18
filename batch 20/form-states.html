@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form States</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		{{fname}}
+		<pre style="border-style: solid;">
+		<form name="f" >
+			<!-- required minlength="5" -->
+			<input type="text" name="gname" ng-model="gname" ng-maxlength="10"> {{gname}}
+			<!-- <span ng-if="f.gname.$invalid" style="color: red;"> Please enter a valid input </span> -->
+			<!-- <span ng-if="f.gname.$dirty && f.gname.$invalid" style="color: red;"> Please enter a valid input </span> -->
+			<!-- <span ng-if="f.gname.$touched && f.gname.$invalid" style="color: red;"> Please enter a valid input </span> -->
+			<!-- <span ng-if="f.gname.$dirty && f.gname.$error.required" style="color: red;"> this is a mandatory feild </span>
+			<span ng-if="f.gname.$dirty && f.gname.$error.minlength" style="color: red;"> -->
+
+			<span ng-if="f.$submitted && f.gname.$error.required" style="color: red;"> this is a mandatory feild </span>
+			<span ng-if="f.$submitted && f.gname.$error.minlength" style="color: red;">please enter min 5 characters </span>
+			<span ng-if="f.$submitted && f.gname.$error.maxlength" style="color: red;">please enter max 10 characters </span>
+			<input type="text" name="lname" ng-model="lname" required> {{lname}}
+			
+			<input type="submit" value="login"> 
+		</form>
+
+		form field states
+
+		f.gname.$valid :: {{f.gname.$valid}}
+		f.gname.$invalid :: {{f.gname.$invalid}}
+		f.gname.$dirty :: {{f.gname.$dirty}}
+		f.gname.$pristine :: {{f.gname.$pristine}}
+		f.gname.$touched :: {{f.gname.$touched}}
+		f.gname.$untouched :: {{f.gname.$untouched}}
+		f.gname.$error required :: {{f.gname.$error.required}}
+		f.gname.$error minlength:: {{f.gname.$error.minlength}}
+
+
+		form states
+
+		f.$valid :: {{f.$valid}}
+		f.$invalid :: {{f.$invalid}}
+		f.$dirty :: {{f.$dirty}}
+		f.$pristine :: {{f.$pristine}}
+		f.$submitted :: {{f.$submitted}}
+		</pre>	
+	</div>
+
+	<script>
+		var app = angular.module('myApp', [])
+		.controller('myController', function($scope){
+			$scope.fname = 'qshore';
+		});
+
+	</script>
+</body>
+</html>

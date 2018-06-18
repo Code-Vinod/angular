@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	<style type="text/css">
+		p{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div ng-app='myApp' ng-controller="myControlller">
+		{{fname}}
+		<p ng-click="callMe()"> this is click</p>
+		<p ng-dblclick="callMe()"> this is dblclick</p>
+		<p ng-mouseover="callMe()"> this is mouseover</p>
+		<p ng-mouseout="callMe()"> this is mouseout</p>
+		<p ng-mouseenter="callMe()"> this is enter</p>
+		<p ng-mouseleave="callMe()"> this is leave</p>
+		<p ng-mousemove="callMe()"> this is move</p>
+		<pre>
+		<input type="text" name="lname" ng-model="lname" placeholder="click" ng-click="callMe()"  > {{lname}}
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="focus" ng-focus="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="blur" ng-blur="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="chang" ng-change="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="ng-keyup" ng-keyup="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="ng-keydown" ng-keydown="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="ng-keypress" ng-keypress="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="ng-cut" ng-cut="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="ng-copy" ng-copy="callMe()"  >
+		
+		<input type="text" name="lname" ng-model="lname" placeholder="ng-paste" ng-paste="callMe()"  >
+	</pre>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+	 	app.controller('myControlller',function($scope){
+			$scope.fname = 'qshore';
+			$scope.count = 0
+
+			$scope.callMe = function(){
+				console.log($scope.count);
+				$scope.count++;
+			}
+		})
+	</script>
+</body>
+</html>

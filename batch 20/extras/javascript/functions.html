@@ -1,0 +1,50 @@
+	
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function callMe() {
+			console.log('callMe invoked');
+		}
+		callMe();
+		function pcallMe(a, b) {
+			var c = a+b;
+			console.log('pcallMe invoked' + c);
+		}
+		pcallMe(2,3);
+
+		function rpcallMe(a, b) {
+			var c = a+b;
+			console.log('rpcallMe invoked' + c);
+			return c; 
+		}
+		var res = rpcallMe(2,3);
+		console.log(res);
+
+		
+		var vcallMe = function(){
+			console.log('vcallMe invoked');
+		}
+		vcallMe();
+
+		var pvcallMe = function(a,b){
+			var c = a+b
+			console.log('pvcallMe invoked :: ' + c);
+		}
+		console.log(pvcallMe(2,3));
+
+		var rpvcallMe = function(a,b){
+			var c = a+b
+			console.log('rpvcallMe invoked :: ' + c);
+			return c;
+		}
+/*		var res2 = rpvcallMe(2,3);
+		console.log(res2);*/
+		console.log(rpvcallMe(2,3));
+
+	</script>
+</head>
+<body>
+</body>
+</html>

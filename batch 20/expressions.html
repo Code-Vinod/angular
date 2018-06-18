@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expressions</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		<pre>
+			{{a}}{{b}}
+			a+b :: {{2+3}}
+			a-b :: {{2-3}}
+			a*b :: {{2*3}}
+			a/b :: {{2/3}}
+			a%b :: {{2%3}}
+			{{a+b}}
+
+			<p ng-bind="a"></p>
+			<p ng-bind="b"></p>
+			<h1 ng-bind="a+b"></h1>
+		</pre>
+	</div>
+
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+
+		app.controller('myController', function($scope){
+			$scope.a = 2;
+			$scope.b = 3;
+
+		});
+	</script>
+
+</body>
+</html>

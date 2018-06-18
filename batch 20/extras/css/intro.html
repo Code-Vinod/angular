@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="h1">
+<head>
+	<title>Qshore</title>
+	<style>
+		/*
+			selector { property : value; property : value; property : value; }
+			*/
+			/*		p{ color: red; }*/
+			/*div{color: red;}*/
+			/*body{color: red;}*/
+			/*html{color: green;}*/
+			/*.b1{color: red;}*/
+			/*.div{color: red;}*/
+			/*.p{color: red;}*/
+			/*.h1{color: red;}*/
+
+			/*#b1{color: green;}*/
+			/*#d1{color: red;}*/
+			/*html.body*/
+
+			/*.b1 #d2{color: red;}*/
+			/*.b1 .div{color: red;}*/
+			/*.b1 .p{color: red;}*/
+			/*#b1 .p{color: red;}*/
+			/*.div .p{color: red}*/
+			/*.b1 .div .p{color: red;}*/
+			/*body div { color: red; }*/
+			/*html body div { color: red; }*/
+			/*body div p {color: red;}*/
+			/*body p {color: red;}*/
+			/*.qshore#d2{color: green;}*/
+			/*div#d2.div.d1.qshore{color: red;}*/
+
+			/*#d2 .p.p1{color: orange}*/
+			/*.p2{color: red;}*/
+			/*.p1{color: orange;}*/
+
+
+/*body div p*/
+	body.b1#b1 div.div.qshore.d1#d2 p.p.p1{color: orange;}
+
+		</style>
+	</head>
+	<body class="b1" id="b1">
+
+		<div class="div" id="d1">
+			<p class="p"> this is para 11</p>
+			<p class="p"> this is para 12</p>
+			<p class="p"> this is para 13</p>
+			<p class="p"> this is para 14</p>
+		</div>
+		###########################
+		<div id="d2" class="div qshore d1" >
+			<p class="p"> this is para 21</p>
+			<p class="p"> this is para 22</p>
+			<p class="p p1"> this is para 23</p>
+			<p class="p"> this is para 24</p>
+		</div>
+		###########################
+		<div class="div">
+			<p class="p"> this is para 31</p>
+			<p class="p"> this is para 32</p>
+			<p class="p"> this is para 33</p>
+			<p class="p"> this is para 34</p>
+		</div>
+		###########################
+		<div class="div">
+			<p class="p"> this is para 41</p>
+			<p class="p"> this is para 42</p>
+			<p class="p"> this is para 43</p>
+			<p class="p"> this is para 44</p>
+		</div>
+	</body>
+	</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Directives</title>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+</head>
+<body >
+
+	<div ng-app="myApp"  ng-controller="myController">
+		{{fname}}
+		<p ng-if="fname=='qshore'"> ths is if </p>
+		<p ng-show="fname=='qshore'"> ths is show </p>
+		<p ng-hide="fname=='qshore'"> ths is hide </p>
+
+		{{fruits}}
+		<p ng-repeat="fruit in fruits"> {{fruit}} </p>
+		<ol >
+			<li ng-repeat="fruit in fruits"> {{fruit}} </li>
+		</ol>
+		<select >
+			<option ng-repeat="fruit in fruits"> {{fruit}}</option>
+		</select>
+		<table border="1">
+			<tr ng-repeat="fruit in fruits">
+				<td> {{fruit}} </td>
+			</tr>
+		</table>
+
+		<table border="1">
+			<tr ng-repeat="xx in fruitss">
+				<td ng-repeat="(k, x) in xx" ng-if="k == 2"> {{x}} {{k}} </td>
+			</tr>
+		</table>
+
+
+		<p ng-switch="fname">
+			<span ng-switch-when="qshore"> this is qshore</span>
+			<span ng-switch-when="ramesh"> this is ramesh</span>
+			<span ng-switch-when="mahesh"> this is mahesh</span>
+			<span ng-switch-default> this is default</span>
+		</p>
+
+		<input type="text" name="fname" ng-model="fname">  {{fname}}
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+
+		app.controller('myController', function($scope){
+			$scope.fname = 'qshoree';
+			$scope.fruits = ['kiwi', 'melon', 'berry', 'banana'];
+			$scope.fruitss = [['kiwi', 'melon', 'berry', 'banana'],
+							 ['kiwi', 'melon', 'berry', 'banana' , 'banana2', 'banana3', 'banana4'],
+							 ['kiwi', 'melon', 'berry', 'banana'], 
+							 ['kiwi', 'melon', 'berry', 'banana']];
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script>
+        var inputnumber = prompt('Enter the number');
+
+        var counter;
+        var perCounter = 0;
+        var previousNumber = 1;
+
+        for (i = 0; i <= inputnumber; i++) {
+
+            for (j = 0; j <= i; j++) 
+            {
+                document.write('*');
+             }
+             document.write('<br/>');
+        }
+        document.write('-------------------------------');
+
+           for (i = 0; i <= inputnumber; i++) {
+            document.write("<div style=' text-align: right;width:100%'>");
+for (j = 0; j <= i; j++) 
+{
+    document.write('*');
+ }
+ document.write('<br/>');
+}
+document.write('</div>');
+document.write('-------------------------------');
+for (i = 0; i <= inputnumber; i++) {
+            document.write("<div style=' text-align: center;width:100%'>");
+for (j = 0; j <= i; j++) 
+{
+    document.write('*');
+ }
+ document.write('<br/>');
+}
+document.write('</div>');
+document.write('-------------------------------');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
